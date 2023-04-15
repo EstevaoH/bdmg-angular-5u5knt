@@ -11,7 +11,7 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
   cepForm!: FormGroup;
 
-  cep: any;
+  cep: Endereco;
 
   constructor(private service: AppService, private formBuilder: FormBuilder) {
     this.cepForm = this.formBuilder.group({
@@ -43,7 +43,9 @@ export class AppComponent {
   }
 
   preencherFormulario(data: Endereco) {
-    const complemento = data.complemento.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+    const complemento = data.complemento
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     this.cepForm.patchValue({
       cep: data.cep,
       logradouro: data.logradouro,
@@ -58,16 +60,15 @@ export class AppComponent {
   }
 }
 
-interface Endereco{
-  cep: string,
-  logradouro: string,
-  complemento: string,
-  bairro: string,
-  localidade: string,
-  uf: string,
-  ibge: string,
-  gia: string,
-  ddd: string,
-  siafi: string
-
+interface Endereco {
+  cep: string;
+  logradouro: string;
+  complemento: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  ibge: string;
+  gia: string;
+  ddd: string;
+  siafi: string;
 }
