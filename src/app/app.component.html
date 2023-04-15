@@ -1,0 +1,75 @@
+<!-- <h1>Teste técnico BDMG</h1>
+<hello></hello>
+<br /> -->
+<main>
+  <form class="form" [formGroup]="cepForm">
+    <p>Digite o CEP para fazer a buscar</p>
+    <input
+      (blur)="onGetCep()"
+      class="input__form"
+      formControlName="cep"
+      type="text"
+      placeholder="CEP"
+      mask="99999-999"
+    />
+    <input
+      class="input__form"
+      formControlName="logradouro"
+      type="text"
+      placeholder="Logradouro"
+    />
+    <input
+      class="input__form"
+      formControlName="complemento"
+      type="text"
+      placeholder="Complemento"
+      mask="9.999"
+    />
+    <input
+      class="input__form"
+      formControlName="bairro"
+      type="text"
+      placeholder="Bairro"
+    />
+    <input
+      class="input__form"
+      formControlName="localidade"
+      type="text"
+      placeholder="Localidade"
+    />
+    <input
+      class="input__form"
+      formControlName="uf"
+      type="text"
+      placeholder="UF"
+    />
+    <input
+      class="input__form"
+      formControlName="ibge"
+      type="text"
+      placeholder="IBGE"
+    />
+    <input
+      class="input__form"
+      formControlName="gia"
+      type="text"
+      placeholder="gia"
+    />
+    <input
+      class="input__form"
+      formControlName="ddd"
+      type="text"
+      placeholder="DDD"
+    />
+    <input
+      class="input__form"
+      formControlName="siafi"
+      type="text"
+      placeholder="Siafi"
+    />
+
+    <button (click)="handleSaveCep()" [disabled]="!cepForm.valid">
+      Salvar
+    </button>
+  </form>
+</main>
